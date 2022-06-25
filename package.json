@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "start": "next start",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "prebuild": "node -e 'fs.rmSync(`.next`, {recursive:true, force:true})'",
     "build": "next build",
     "check-types": "tsc --noEmit",
-    "start": "next start",
     "lint": "next lint",
+    "lint:fix": "npm run lint --fix",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "test": "jest",
     "test:w": "jest --watch"
