@@ -1,25 +1,28 @@
+// See https://nextjs.org/docs/pages/building-your-application/configuring/debugging
 {
-  // IntelliSense を使用して利用可能な属性を学べます。
-  // 既存の属性の説明をホバーして表示します。
-  // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "[NextTemplate]Next.js Server Side Debugger Settings",
-      "type": "node",
-      "request": "attach",
-      "skipFiles": ["<node_internals>/**"],
-      "port": 9229
+      "name": "[NextTemplate] Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev"
     },
     {
-      "name": "[NextTemplate]Next.js Client Side Debugger Settings",
-      "type": "pwa-chrome",
+      "name": "[NextTemplate] Next.js: debug client-side",
+      "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}",
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack://_N_E/*": "${webRoot}/*"
+      "url": "http://localhost:3000"
+    },
+    {
+      "name": "[NextTemplate] Next.js: debug full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
       }
     }
   ]
