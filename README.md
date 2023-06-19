@@ -116,7 +116,7 @@ npm update
 
 ## ライブラリのアップデート
 
-### ``のグローバルインストール
+### `npm-check-updates`のグローバルインストール
 
 ```terminal
 % npm i -g npm-check-updates
